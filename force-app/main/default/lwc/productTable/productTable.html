@@ -1,0 +1,26 @@
+<template>
+     <div>
+      <template if:true={button}>
+        <table class="table_price">
+            <caption>Products</caption>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th colspan="4">Cost</th>
+            </tr>
+            <template for:each={listOfProduct} for:item="pro">
+              <tr key={pro.Id}>
+                <td><img class="small" src={pro.Image__c}></td>
+                <td>{pro.Name}</td>
+                <td>{pro.Description__c}</td>
+                <td>{pro.Cost__c}$<lightning-button data-id={pro.Id} variant="brand" label="Buy" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></td>
+              </tr>
+            </template> 
+            </table> 
+      </template>
+      <template if:false={button}>
+        <c-page-of-product id-of-table-product = {idOfProduct}></c-page-of-product>
+      </template>  
+    </div>
+</template> 

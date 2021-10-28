@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.part1 {
+    width: 300px;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 100px;
+}
