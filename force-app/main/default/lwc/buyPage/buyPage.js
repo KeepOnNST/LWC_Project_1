@@ -12,23 +12,28 @@ export default class BuyPage extends LightningElement {
     quantityWrite(event) {
         this.quantityOfProduct = event.currentTarget.value * this.costBuyingProduct;
     }
-    getContact() {
+    secondHandleClick () {
         console.log('lol');
-       /* getContactData()
+        getContactData()
             .then(result => {
                 this.getContact = result;
-                console.log('lol', result);
+                //console.log('lol', result);
                 
             })
             .catch(error => {
                 this.error = error;
             });
-        this.getContact.FirstName = document.getElementById("firstName").value;
-        this.getContact.LastName = document.getElementById("lastName").value;
-        this.getContact.Email = document.getElementById("email").value;
-        console.log('lol', this.getContact);
+        // let Contacts = this.template.querySelectorAll('div > lightning-input.contact').value;
+        // console.log(this.Contacts);
+        var Contact = this.getElementsByClassName('contact').value;
+        console.log(this.Contact);
+        /*this.getContact.FirstName = Contact[0];
+        this.getContact.LastName = Contact[1];
+        this.getContact.Email = Contact[2];
+        console.log('lol2');
         giveContactData ({
             givenContact : this.getContact
-        }) */
+        })*/
     }
+    //handleClick () {console.log('lol');}
 }

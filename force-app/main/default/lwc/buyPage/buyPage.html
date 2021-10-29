@@ -1,21 +1,21 @@
 <template>
     <div>
         <div class="container">
-            <div><lightning-input id="firstName" class="part1" type="text" label="Enter your First Name" placeholder="type here..."></lightning-input></div>
+            <div><lightning-input id="firstName" class="part1 contact" type="text" label="Enter your First Name" placeholder="type here..."></lightning-input></div>
             <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> -->
             <p>{nameBuyingProduct}</p> 
         </div>
         <div class="container">
-            <div><lightning-input id="lastName" class="part1" type="text" label="Enter your Last Name" placeholder="type here..."></lightning-input></div>
+            <div><lightning-input id="lastName" class="part1 contact" type="text" label="Enter your Last Name" placeholder="type here..."></lightning-input></div>
             <div><lightning-input class="part1" type="text" value="" label="How much units?" onchange={quantityWrite}></lightning-input></div>
         </div>
         <div class="container">
-            <div><lightning-input id="email" class="part1" type="email" label="Enter your email address" placeholder="type here..."></lightning-input></div>
+            <div><lightning-input id="email" class="part1 contact" type="email" label="Enter your email address" placeholder="type here..."></lightning-input></div>
             <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> -->\
             <p>{quantityOfProduct}</p> 
         </div>
         <div class="button">
-            <div><lightning-button variant="brand" label="Buy" title="Primary action" onclick={getContact} class="slds-m-left_x-small"></lightning-button></div>
+            <div><lightning-button variant="brand" label="Buy" title="Primary action" onclick={secondHandleClick} class="slds-m-left_x-small"></lightning-button></div>
             <div><lightning-button label="Neutral" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></div>
         </div>
     </div>
