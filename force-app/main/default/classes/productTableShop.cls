@@ -19,13 +19,12 @@ public without sharing class productTableShop {
         return Product;
     }
     @AuraEnabled
-    public static Contact getContactData () {
+    public static Contact getContactData (string Namelol, string surName, string contactEmail) {
         Contact buyerContact = new Contact();
+        buyerContact.FirstName = Namelol;
+        buyerContact.LastName = surName;
+        buyerContact.Email = contactEmail;
+        insert buyerContact;
         return buyerContact;
-    }
-    @AuraEnabled
-    public static Contact giveContactData (Contact givenContact) {
-        insert givenContact;
-        return givenContact;
     }
 }

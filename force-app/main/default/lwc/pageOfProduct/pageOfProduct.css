@@ -1,22 +1,53 @@
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
+    /* border-collapse: collapse; */
     border-collapse: collapse;
+    border-left: 3px solid #F79361;
+    border-right: 3px solid #F79361;
+    border-bottom: 3px solid #F79361;
     text-align: center;
     }
     th, td:first-child {
-    background: #AFCDE7;
-    color: black;
+    background: #94badb;
+    /* color: black; */
     padding: 10px 20px;
     }
     th, td {
     border-style: solid;
     border-width: 0 1px 1px 0;
-    border-color: white;
+    border-color: #94badb;
     }
     td {
     background: #D8E6F3;
     }
     th:first-child, td:first-child {
     text-align: left;
+    }
+    caption {
+        text-align: center;
+        background: #E5E5E5;
+        border-left: 3px solid #F79361;
+        border-right: 3px solid #F79361;
+        border-top: 3px solid #F79361;
+        border-bottom: 3px solid #F79361;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 10px;
+        font-family: "Roboto Slab",serif;
+        font-style: normal;
+        font-size: 26px;
+    }
+    .small {
+        width: 100px;
+      }
+    .button {
+        margin-left: 40%;
+    }
+    .cost {
+        color: red;
+        margin-left: 45%;
+    }
+    .description {
+        color: rgb(80, 78, 78);
     }

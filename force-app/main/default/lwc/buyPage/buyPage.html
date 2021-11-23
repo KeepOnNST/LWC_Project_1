@@ -1,22 +1,35 @@
 <template>
     <div>
-        <div class="container">
-            <div><lightning-input id="firstName" class="part1 contact" type="text" label="Enter your First Name" placeholder="type here..."></lightning-input></div>
-            <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> -->
-            <p>{nameBuyingProduct}</p> 
-        </div>
-        <div class="container">
-            <div><lightning-input id="lastName" class="part1 contact" type="text" label="Enter your Last Name" placeholder="type here..."></lightning-input></div>
-            <div><lightning-input class="part1" type="text" value="" label="How much units?" onchange={quantityWrite}></lightning-input></div>
-        </div>
-        <div class="container">
-            <div><lightning-input id="email" class="part1 contact" type="email" label="Enter your email address" placeholder="type here..."></lightning-input></div>
-            <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> -->\
-            <p>{quantityOfProduct}</p> 
-        </div>
-        <div class="button">
-            <div><lightning-button variant="brand" label="Buy" title="Primary action" onclick={secondHandleClick} class="slds-m-left_x-small"></lightning-button></div>
-            <div><lightning-button label="Neutral" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></div>
-        </div>
+        <template if:true={button}>
+            <div class="container">
+                <div>
+                    <div>
+                        <lightning-input id="firstName" class="part1 position firstName" type="text" label="Enter your First Name" placeholder="type here..."></lightning-input>
+                        <p class="text">Name: {nameBuyingProduct}</p>
+                    </div>
+                    <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> --> 
+                </div>
+                <div class="break"></div>
+                <div>
+                    <lightning-input id="lastName" class="part1 position lastName" type="text" label="Enter your Last Name" placeholder="type here..."></lightning-input>
+                    <!-- <p class="text">How much units?</p> -->
+                    <lightning-input class="part2" type="text" value="" onchange={quantityWrite} label="Enter amount"></lightning-input>
+                </div>
+                <div class="break"></div>
+                <div>
+                    <lightning-input id="email" class="part1 position emailOfContact" type="text" label="Enter your email address" placeholder="type here..."></lightning-input>
+                    <p class="text">Total Amount: {quantityOfProduct}</p>
+                    <!-- <div><lightning-input type="date" name="input1" label="Enter your Last Name" ></lightning-input></div> -->
+                </div>
+                <div class="break"></div>
+                <div class="button">
+                    <lightning-button variant="brand" label="Buy" title="Primary action" onclick={secondHandleClick} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button label="Back" title="Non-primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+        </template>
+        <template if:false={button}>
+            <c-end-page></c-end-page>
+        </template>
     </div>
 </template>

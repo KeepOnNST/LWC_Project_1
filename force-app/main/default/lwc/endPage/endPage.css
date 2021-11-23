@@ -1,0 +1,17 @@
+.container {
+    background: #94badb;
+    border-left: 3px solid #F79361;
+    border-right: 3px solid #F79361;
+    border-bottom: 3px solid #F79361;
+    border-top: 3px solid #F79361;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.textPosition {
+    text-align: center;
+}
+
+.buttonPosition {
+    margin-left: 44%;
+}

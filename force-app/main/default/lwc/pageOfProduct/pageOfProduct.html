@@ -4,28 +4,27 @@
         <table>
             <caption>Table</caption>
             <tr>
-                <td rowspan="5"><img src={detailProduct.Image__c}></td>
+                <td rowspan="5"><img class="small" src={detailProduct.Image__c}></td>
             </tr>
             <tr>
                 <td>{detailProduct.Name}</td>
             </tr>
             <tr>
-                <td>{detailProduct.Description__c}</td>
+                <td><p class="description">{detailProduct.Description__c}</p></td>
             </tr>
             <tr>
-                <td>{detailProduct.Cost__c}$</td>
+                <td><p class="cost">{detailProduct.Cost__c}$</p></td>
             </tr>
             <tr>
                 <td>
-                    <lightning-button variant="brand" data-name={detailProduct.Name} data-cost={detailProduct.Cost__c} label="Buy" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" data-name={detailProduct.Name} data-cost={detailProduct.Cost__c} label="Buy" title="Primary action" onclick={handleClick} class="slds-m-left_x-small button"></lightning-button>
                     <lightning-button label="Back" title="Non-primary action" onclick={secondHandleClick} class="slds-m-left_x-small"></lightning-button>
 
                 </td>
             </tr>
         </table>
     </template>
-    <template if:false={secondButton}>
-        <c-buy-page name-buying-product = {nameOfProduct} cost-buying-product = {costOfProduct}></c-buy-page>
+    <template if:false={secondButton}> <c-buy-page name-buying-product = {nameOfProduct} cost-buying-product = {costOfProduct} onbackdetail={changeDetailButton}></c-buy-page>
     </template>
     </div>
 </template>

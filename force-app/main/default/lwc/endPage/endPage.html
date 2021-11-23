@@ -1,0 +1,11 @@
+<template>
+    <template if:true={backToStart}>
+        <div class="container">
+            <div class="textPosition">Thank you for your order. <br> Come to us again</div>
+            <div class="buttonPosition"><lightning-button variant="brand" label="Back to main Menu" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button></div>
+        </div>
+    </template>
+    <template if:false={backToStart}>
+        <c-product-table></c-product-table>
+    </template>
+</template>

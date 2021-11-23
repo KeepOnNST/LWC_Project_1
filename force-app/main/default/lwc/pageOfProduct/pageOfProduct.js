@@ -3,7 +3,7 @@ import getPersonalData from '@salesforce/apex/productTableShop.getPersonalData';
 
 export default class PageOfProduct extends LightningElement {
     @api idOfTableProduct;
-    @api button;
+    @track changeOfMainButton;
     @track secondButton = true;
     @track detailProduct = {};
     @track nameOfProduct;
@@ -16,7 +16,7 @@ export default class PageOfProduct extends LightningElement {
             .then(result => {
                 console.log('lol', result);
                 this.detailProduct = result;
-                console.log(this.detailProduct);
+                console.log('kek', this.detailProduct);
                 
             })
             .catch(error => {
@@ -30,7 +30,13 @@ export default class PageOfProduct extends LightningElement {
         this.costOfProduct = event.currentTarget.dataset.cost;
     }
 
-    secondHandleClick() {
-        this.button = true;
+    secondHandleClick(event) {
+        this.changeOfMainButton = true;
+        const backButton = new CustomEvent('backmain',{detail:this.changeOfMainButton});
+        this.dispatchEvent(backButton);
     }
+
+    changeDetailButton(event) {
+        this.secondButton = event.detail;
+    } 
 }
